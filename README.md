@@ -1,11 +1,10 @@
 # VWAP Options pricer
 
 The material in this repository belongs to my honours project in Mathematical Finance during 2011.
-I was working based on Dr Tim Ling's codes that use GNU gsl library.
+I was working based on the implementation of Dr Tim Ling's option pricing header that use GNU gsl library and Boost.
+In the current version, GNU gsl has been fully removed the standard library header <random>.
 
 If you turn out to make any use of it. Please do cite the repository :)
-
-In the current version, we replace that with the standard library header <random>.
 
 ## Compiler requirement
 
