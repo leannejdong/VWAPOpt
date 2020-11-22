@@ -123,10 +123,17 @@ public:
         //compute estimate for VWAP price
         for (int i = 0; i < NPaths_; ++i) {
             double VWAP_T = simulateSinglePath();
+//            cout << "VWAP_T" << VWAP_T << "\n";
+//            cout << "K_" << K_ << "\n";
             if((VWAP_T - K_ ) > 0)
+            {
                 price(VWAP_T - K_);
+               // cout << "VWAP_T -K_: " << VWAP_T - K_ << "\n";
+            }
             else
+            {
                 price(0.0);
+            }
         }
         cout << std::endl;
         cout << "computation time = " << t.format(3) << std::endl;
@@ -225,13 +232,13 @@ private:
     float GetNormDistrFloat()
     {
         float val = -1;
-        do { val = nd(gen); }
-        while(val < 0.0f || val > 1.0f);
-
+//        do { val = nd(gen); }
+//        while(val < 0.0f || val > 10.0f);
+        val = nd(gen);
         return val;
     }
 
-    float val = GetNormDistrFloat();
+    //float val = nd(gen);
 
 
     //return a realisation of VWAP_T
@@ -245,14 +252,12 @@ private:
         const double muX = a_*(1-exp(-lambda_ * delta_));
         const double sigmaX2 = pow(sigmaVol_,2)/(2*lambda_)*(1-exp(-2*lambda_*delta_));
 
-        // Get a normally distributed float value in the range [0,1].
-
         //simulate path over [0,T]
         for (int i = 1; i <= numIncrements_; i++) {
             Sti = Sti*exp((mu_-0.5*sigmaPrice_*sigmaPrice_)*delta_
-                          + sigmaPrice_*sqrt(delta_))*val;
+                          + sigmaPrice_*sqrt(delta_))*GetNormDistrFloat();
 
-            Xti = exp(-lambda_*delta_)*Xti + muX + sqrt(sigmaX2)*val;
+            Xti = exp(-lambda_*delta_)*Xti + muX + sqrt(sigmaX2)*GetNormDistrFloat();
             Uti = pow(Xti,2);
 
             sumStUt+= Sti*Uti;
