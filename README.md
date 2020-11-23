@@ -1,10 +1,13 @@
 # VWAP Options pricer
 
-The material in this repository belongs to my honours project in Mathematical Finance during 2011.
+I sympathize the fact that almost all quant codes are proprietary. I decided to release codes from my honour thesis. 
+The material in this repository belongs to my honours project in Mathematical Finance during 2011 
+on the topic of VWAP Options pricing under a matching-moment approach. Monte Carlo simulations was performed in validating
+the analytic prices computed from our formulae.
 I was working based on the implementation of Dr Tim Ling's option pricing header that use GNU gsl library and Boost.
 In the current version, GNU gsl has been fully removed the standard library header <random>.
 
-If you turn out to make any use of it. Please do cite the repository :)
+If you turn out to make any use of it, either on your project or quant work. Please do cite the repository :)
 
 ## Compiler requirement
 

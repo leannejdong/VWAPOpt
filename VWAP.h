@@ -232,7 +232,7 @@ private:
         std::normal_distribution<> nd;
         val = nd(gen);
         do { val = nd(gen);}
-        while(val < 1.5 || val > 2.5);
+        while(val < 0.5 || val > 2.5);
 
         return val;
     }
