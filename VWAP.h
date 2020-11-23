@@ -225,24 +225,24 @@ public:
     }
 private:
 
-    std::random_device rd{};
-    std::mt19937 gen{rd()};
-    std::normal_distribution<> nd;
 
-    float GetNormDistrFloat()
+    double GetNormDistrDouble(std::mt19937 &gen)
     {
-        float val = -1;
-//        do { val = nd(gen); }
-//        while(val < 0.0f || val > 10.0f);
+        double val = 1;
+        std::normal_distribution<> nd;
         val = nd(gen);
+        do { val = nd(gen);}
+        while(val < 1.5 || val > 2.5);
+
         return val;
     }
-
-    //float val = nd(gen);
 
 
     //return a realisation of VWAP_T
     double simulateSinglePath() {
+        int seed = 10;
+        std::mt19937 gen(seed);
+
         double sumStUt = S0_*X0_*X0_;
         double sumUt   = X0_*X0_;
 
@@ -255,9 +255,9 @@ private:
         //simulate path over [0,T]
         for (int i = 1; i <= numIncrements_; i++) {
             Sti = Sti*exp((mu_-0.5*sigmaPrice_*sigmaPrice_)*delta_
-                          + sigmaPrice_*sqrt(delta_))*GetNormDistrFloat();
+                          + sigmaPrice_*sqrt(delta_))*GetNormDistrDouble(gen);
 
-            Xti = exp(-lambda_*delta_)*Xti + muX + sqrt(sigmaX2)*GetNormDistrFloat();
+            Xti = exp(-lambda_*delta_)*Xti + muX + sqrt(sigmaX2)*GetNormDistrDouble(gen);
             Uti = pow(Xti,2);
 
             sumStUt+= Sti*Uti;
