@@ -21,7 +21,6 @@
 #include <boost/accumulators/statistics/variance.hpp>
 
 using std::vector;
-using std::cout;
 using std::ofstream;
 using namespace boost::accumulators;
 using timer = boost::timer::auto_cpu_timer;
@@ -60,6 +59,8 @@ public:
     }
 
     void computefirst2Moments(ofstream& file) {
+        using namespace boost::accumulators;
+        using std::cout;
         timer t;
         accumulator_set<double, stats<tag::moment<1>,tag::variance(immediate) > > moment1;
         accumulator_set<double, stats<tag::moment<2>,tag::variance(immediate) > > moment2;
@@ -96,6 +97,8 @@ public:
 
 
     void computeMoment3(ofstream& file) {
+        using std::cout;
+        using namespace boost::accumulators;
         timer t;
         accumulator_set<double, stats<tag::moment<3> > > moment3;
 
@@ -117,6 +120,7 @@ public:
     }
 
     void computePrice(ofstream& file) {
+        using std::cout;
         timer t;
         accumulator_set<double, stats<tag::mean, tag::variance(immediate) > > price;
 
@@ -149,6 +153,7 @@ public:
 
     }
     void computeMoment3AndPrice(ofstream& file) {
+        using std::cout;
         timer t;
         accumulator_set<double, stats<tag::moment<3> > > moment3;
         accumulator_set<double, stats<tag::mean, tag::variance(immediate) > > price;
@@ -187,6 +192,7 @@ public:
     }
 
     void computeParameters(ofstream& file) {
+        using std::cout;
         timer t;
         for (int i = 0; i < NPaths_; ++i) {
 
@@ -230,7 +236,7 @@ private:
     {
         double val = 1;
         std::normal_distribution<> nd;
-        val = nd(gen);
+     //   val = nd(gen);
         do { val = nd(gen);}
         while(val < 0.5 || val > 2.5);
 
