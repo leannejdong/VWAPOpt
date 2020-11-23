@@ -8,6 +8,8 @@ I was working based on the implementation of Dr Tim Ling's option pricing header
 In the current version, GNU gsl has been fully removed the standard library header <random>.
 
 If you turn out to make any use of it, either on your project or quant work. Please do cite the repository :)
+The codes clearly not so pretty. The main point here is problem solving. For any suggestions, feel free to drop me an 
+email or over twitter or  cppslack@leanne.
 
 ## Compiler requirement
 
