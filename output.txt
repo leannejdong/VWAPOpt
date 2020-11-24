@@ -1,0 +1,39 @@
+
+computation time =  7.708s wall, 7.700s user + 0.000s system = 7.700s CPU (99.9%)
+
+sigmaPrice = 0.1
+E(VWAP) = 152.806
+E(VWAP^2) = 23349.6
+ 7.707810s wall, 7.700000s user + 0.000000s system = 7.700000s CPU (99.9%)
+
+computation time =  3.830s wall, 3.830s user + 0.000s system = 3.830s CPU (100.0%)
+
+sigmaPrice = 0.1
+E(VWAP^3) = 3.56795e+06
+ 3.829642s wall, 3.830000s user + 0.000000s system = 3.830000s CPU (100.0%)
+
+computation time =  3.830s wall, 3.830s user + 0.000s system = 3.830s CPU (100.0%)
+
+sigmaPrice = 0.1
+price = 62.8057
+stdDevPrice = 2.31286e-12
+ 3.830034s wall, 3.830000s user + 0.000000s system = 3.830000s CPU (100.0%)
+
+computation time =  8.94s wall, 8.94s user + 0.00s system = 8.94s CPU (100.0%)
+
+sigmaPrice = 0.1
+E(VWAP^3) = 3.56795e+06
+price = 62.8057
+stdDevPrice = 2.31286e-12
+ 8.938699s wall, 8.940000s user + 0.000000s system = 8.940000s CPU (100.0%)
+
+computation time =  4.718s wall, 4.720s user + 0.000s system = 4.720s CPU (100.0%)
+
+sigmaPrice = 0.1
+Delta = 0.002
+E(VWAP) = 152.806
+E(VWAP^2) = 23349.6
+E(VWAP^3) = 3.56795e+06
+price = 62.8057
+stdDev = 2.31286e-12
+ 4.718397s wall, 4.720000s user + 0.000000s system = 4.720000s CPU (100.0%)
