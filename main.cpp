@@ -3,9 +3,9 @@
 #include <iostream>
 
 int main() {
-    int NPaths = 10000; int numIncrements = 500; double T = 1.0;
+    int NPaths = 1000000; int numIncrements = 500; double T = 1.0;
     double lambda = 2; double a = 0.1; double sigmaVol = 5; double mu = 0.1;
-    double sigmaPrice = 0.1; double X0 = 22; double S0 = 110;
+    double sigmaPrice = 0.1; double X0 = 22; double S0 = 100;
     double K = 90; double interestRate = 0.10; //double delta = T/numIncrements;
 
     VWAPOption opt1{NPaths,numIncrements,T,lambda, a, sigmaVol, mu, sigmaPrice, X0, S0, K, interestRate};
