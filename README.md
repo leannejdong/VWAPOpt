@@ -3,7 +3,8 @@
 I sympathize the fact that almost all quant codes are proprietary. I decided to release codes from my honour thesis. 
 The material in this repository belongs to my honours project in Mathematical Finance during 2011 
 on the topic of VWAP Options pricing under a matching-moment approach. Monte Carlo simulations was performed in validating
-the analytic prices computed from our formulae.
+the analytic prices computed from our formulae. VWAP represents Volume Weighted Average Price. VWAP Options are hybrid  financial derivative instrument derived from VWAP. It is widely
+used in market microstructure and algorithmic trading by institutional investors such as Investment banks.
 I was working based on the implementation of Dr Tim Ling's option pricing header that use GNU gsl library and Boost.
 In the current version, GNU gsl has been fully removed the standard library header `<random>`.
 
