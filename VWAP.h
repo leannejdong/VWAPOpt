@@ -21,12 +21,25 @@
 #include <boost/accumulators/statistics/variance.hpp>
 
 
-using namespace boost::accumulators;
+//using namespace boost::accumulators;
 
 
 class VWAPOption {
 
 public:
+    template <typename... Args>
+    using accumulator_set = boost::accumulators::accumulator_set<Args...>;
+
+    template <typename... Args>
+    using stats = boost::accumulators::stats<Args...>;
+
+    template <int N>
+    using tag_moment = boost::accumulators::tag::moment<N>;
+
+    using tag_mean = boost::accumulators::tag::mean;
+    using tag_variance = boost::accumulators::tag::variance;
+    using immediate = boost::accumulators::immediate;
+
     VWAPOption(
             int NPaths,
             int numIncrements,
@@ -84,7 +97,7 @@ private:
             K_,
             interestRate_; //strike price
 
-    accumulator_set<double, stats<tag::moment<1>, tag::moment<2>, tag::moment<3> > > VWAPMoments_;
-    accumulator_set<double, stats<tag::mean, tag::variance(immediate) > > callOptionPayoffs_;
+    accumulator_set<double, stats<tag_moment<1>, tag_moment<2>, tag_moment<3> > > VWAPMoments_;
+    accumulator_set<double, stats<tag_mean, tag_variance(immediate) > > callOptionPayoffs_;
 };
 #endif //VWAPOPT_VWAP_H

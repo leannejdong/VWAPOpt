@@ -4,7 +4,6 @@
 
 #include "utility.h"
 #include "VWAP.h"
-//#include <iostream>
 #include <ctime>
 #include <cmath>
 #include <random>
@@ -17,7 +16,6 @@
 #include <boost/accumulators/statistics/moment.hpp>
 #include <boost/accumulators/statistics/variance.hpp>
 
-//using std::cout;
 using std::vector;
 using std::ofstream;
 using namespace boost::accumulators;
